@@ -10,6 +10,9 @@ Things deliberately deferred, with what unblocks them. Add an entry whenever som
   - Write an extractor to canonical events, then re-run build → indicators → link. Check it against the existing bridges (relay services, naming shapes, target domains, /16s, OpenAI egress).
   - Add a notebook and update `docs/findings/cross-incident.md`.
 
+- **ARB Research incident catalog** (added 2026-10-08 by the owner): <https://cheats.arbresearch.com/incidents/>. Not yet surveyed. First check whether it is a catalog of other publishers' reports, which may duplicate sources we already have, or a dataset in its own right. Then follow the same incorporation steps as above.
+- **swarmcha.se "Chinese agent fleet" post** (added 2026-10-08 by the owner): <https://swarmcha.se/posts/chinese-agent-fleet>. Not yet surveyed. It appears to describe a separate fleet, so it is likely a new incident rather than part of the OpenAI-attributed swarm. Check whether it publishes data, then follow the same incorporation steps as above. Bridges to the existing incidents would be a finding in either direction.
+
 ## Waiting on something external
 
 - **Community agent-pastes export** (`termina-swarm-map/agent-pastes-2026-09-08.tar.gz`, linked from rubyhack.ai). `swarm.termina.digital` has returned 503 "public exports are temporarily unavailable" since 2026-09-25; the last check was 2026-09-28. The periodic retry was stopped at the owner's request. Re-run `uv run agent-swarm acquire --only termina-swarm-map` by hand at the start of a work session. If it's still an error, discard the timestamp-only change with `git checkout -- sources/manifest.json`. **When it lands:** survey it in `agents.md`, add an extractor, and fold it into Stage 9 linkage (it's a venue/handle map, so it's likely rich in bridging identifiers).
