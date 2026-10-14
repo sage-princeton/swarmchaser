@@ -1,6 +1,6 @@
 # Task 1 Plan: Systematize Incident Datasets and Link the Swarms
 
-> **For agentic workers:** execute stage by stage (superpowers:executing-plans). Each stage is one stacked draft PR (see *Delivery* below). Steps use checkbox (`- [ ]`) syntax. Read `agents.md` first, especially the handling rules.
+> **For agentic workers:** execute stage by stage (superpowers:executing-plans). Each stage is one stacked draft PR (see *Delivery* below). Steps use checkbox (`- [ ]`) syntax. Read `AGENTS.md` first, especially the handling rules.
 
 **Goal:** Turn the four published incident datasets into one canonical, provenance-preserving event table plus an indicator table. Use them to (a) show all incidents on one timeline and (b) find the identifiers and techniques that connect the incidents and can seed the Task 2 hunt.
 
@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.13, uv, polars (ETL), DuckDB (ad-hoc SQL in notebooks), Parquet/pyarrow, Altair + vl-convert (charts; follow the `dataviz` skill), networkx (Stage 8), pytest, ruff, JupyterLab.
 
-**Spec:** the task statement in the owner's kickoff (see `agents.md` → *Purpose*) plus the dataset survey in `agents.md` → *Source datasets*.
+**Spec:** the task statement in the owner's kickoff (see `AGENTS.md` → *Purpose*) plus the dataset survey in `AGENTS.md` → *Source datasets*.
 
 ## Global Constraints
 
@@ -103,14 +103,14 @@ notebooks/
   01_collusion_wiki.ipynb   02_transluce_urlquery.ipynb   03_swarmtraces.ipynb
   04_rubyhack.ipynb         05_unified_timeline.ipynb     06_indicators.ipynb
   07_techniques.ipynb       08_cross_incident_links.ipynb
-reports/figures/          exported SVG/PNG aggregates referenced from notebooks and agents.md
+reports/figures/          exported SVG/PNG aggregates referenced from notebooks and AGENTS.md
 ```
 
 ## Notebook conventions
 
 - Each notebook starts with a markdown cell giving **Question · Inputs (exact parquet paths) · Outputs · Caveats**. It ends with a **Findings** cell of bullet points, each tied to a chart or table above it.
 - Load via `agent_swarm.paths`, never with hard-coded paths. First cell: `%load_ext autoreload`.
-- Charts use Altair and follow the `dataviz` skill (read it before the first chart). Every chart has a title stating the takeaway, labeled axes with units/UTC, and a source caption (`Source: collusion.wiki revisions.jsonl`). Figures that `agents.md` references are exported to `reports/figures/`.
+- Charts use Altair and follow the `dataviz` skill (read it before the first chart). Every chart has a title stating the takeaway, labeled axes with units/UTC, and a source caption (`Source: collusion.wiki revisions.jsonl`). Figures that `AGENTS.md` references are exported to `reports/figures/`.
 - Outputs are committed. Never print raw payload bodies longer than 300 chars, and never print anything the source marked redacted.
 - Before committing, run `uv run jupyter nbconvert --to notebook --execute --inplace notebooks/NN_*.ipynb` so outputs are reproducible from the pipeline, then `uv run nbqa ruff notebooks/`.
 
