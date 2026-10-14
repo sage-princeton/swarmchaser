@@ -1,6 +1,6 @@
-# agents.md
+# AGENTS.md
 
-Context and working rules for AI coding agents (and humans) in `agent-swarm`. `claude.md` points here; keep it that way: new context goes in this file, not in `claude.md`.
+Context and working rules for AI coding agents (and humans) in `agent-swarm`. `CLAUDE.md` points here; keep it that way: new context goes in this file, not in `CLAUDE.md`.
 
 ## Purpose
 
@@ -25,7 +25,7 @@ The plan for (1) and (2) is in [`docs/analysis-plan.md`](docs/analysis-plan.md).
 ## Repo layout and commands
 
 ```
-agents.md                  this file (claude.md -> agents.md)
+AGENTS.md                  this file (CLAUDE.md -> AGENTS.md)
 incident-reports.md        the incident reports in scope, as given by the project owner
 sources/sources.toml       pinned artifact URLs per source (report snapshots, datasets, references)
 sources/manifest.json      sha256/bytes/fetch time of every artifact (committed; data isn't)
